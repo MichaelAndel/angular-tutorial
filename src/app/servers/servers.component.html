@@ -3,7 +3,7 @@
     type="text"
     class="form-control"
     (input)="onUpdateServerName($event)">
-<p>{{ serverName }}</p>
+
 <label>User name</label>
 <input
     type="text"
@@ -11,9 +11,10 @@
     (input)="onUpdateUserName($event)">
 <button 
     class="btn btn-primary" 
-    [disabled]="!allowNewServer"
+    [disabled]="!allowNewServer || userNameEmpty"
     (click)="onCreateServer()">Add servers</button>
-<!--<p [innerText]="allowNewServer"></p>-->
+    <!--<p [innerText]="allowNewServer"></p>-->
+<p>Server: {{ serverName }} User: {{ userName }}</p>
 <p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
