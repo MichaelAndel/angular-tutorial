@@ -4,6 +4,11 @@
     class="form-control"
     (input)="onUpdateServerName($event)">
 <p>{{ serverName }}</p>
+<label>User name</label>
+<input
+    type="text"
+    class="form-control"
+    (input)="onUpdateUserName($event)">
 <button 
     class="btn btn-primary" 
     [disabled]="!allowNewServer"
