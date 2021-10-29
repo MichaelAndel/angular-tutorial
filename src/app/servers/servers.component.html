@@ -9,12 +9,16 @@
     type="text"
     class="form-control"
     (input)="onUpdateUserName($event)">
-<button 
-    class="btn btn-primary" 
+<button
+    class="btn btn-primary"
     [disabled]="!allowNewServer || userNameEmpty"
     (click)="onCreateServer()">Add servers</button>
+<button
+  class="btn btn-primary"
+  [disabled]="userNameEmpty"
+  (click)="resetUserName($event)">Reset Users name</button>
     <!--<p [innerText]="allowNewServer"></p>-->
-<p>Server: {{ serverName }} User: {{ userName }}</p>
+<p>Server: {{ serverName }} </p><p>User: {{ userName }}</p>
 <p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>

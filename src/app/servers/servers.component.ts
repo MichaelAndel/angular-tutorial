@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -29,10 +30,15 @@ export class ServersComponent implements OnInit {
 
   onUpdateUserName(event: Event) {
     this.userName = (<HTMLInputElement>event.target).value;
-    this.userNameEmpty = false;
+    this.userNameEmpty = this.userName.length <= 0 ? true : false;
   }
 
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  resetUserName(event: Event) {
+    this.userName = '';
+    this.onUpdateUserName(event);
   }
 }
