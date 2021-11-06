@@ -8,11 +8,22 @@
     class="form-control"
     [(ngModel)]="serverName">
 <p>{{ serverName }}</p>
-<button 
-    class="btn btn-primary" 
+<button
+    class="btn btn-primary"
     [disabled]="!allowNewServer"
     (click)="onCreateServer()">Add servers</button>
 <!--<p [innerText]="allowNewServer"></p>-->
 <!--<p>{{ serverCreationStatus }}</p>-->
+<button
+    id="revealYourSecrets"
+    class="btn btn-primary"
+    (click)="onRevealSecrets($event)">Display details</button>
 <p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
+<p *ngIf="secretsAreReveald">Psssshhht! Its a secret</p>
+<div *ngFor="let click of clickArray; let i = index">
+  <p
+  [ngStyle]="{colour: getColor()}"
+  [ngClass]="{clicks: i >= 5}">{{ click.event }}</p>
+</div>
+
 <app-server *ngFor="let server of servers"></app-server>
