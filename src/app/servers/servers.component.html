@@ -22,7 +22,7 @@
 <p *ngIf="secretsAreReveald">Psssshhht! Its a secret</p>
 <div *ngFor="let click of clickArray; let i = index">
   <p
-  [ngStyle]="{colour: getColor()}"
+  [ngStyle]="{color: getColor()}"
   [ngClass]="{clicks: i >= 5}">{{ click.event }}</p>
 </div>
 
